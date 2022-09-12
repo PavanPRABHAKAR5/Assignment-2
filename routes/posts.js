@@ -65,13 +65,13 @@ router.put("/:postId", async (req, res) => {
 	try {
 			// console.log(req.query);
 			const data = await Post.updateOne({postId: req.params.id}, req.body);
-			res.json({
+			res.status(200).json({
 					status: "Success",
 					data
 			})
 
 	}catch(e) {
-			res.status(500).json({
+			res.status(400).json({
 					status: "failed",
 					message: e.message
 			})
