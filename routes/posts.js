@@ -27,7 +27,7 @@ router.post('/', async (req,res)=>{
         const data = await Post.create({
             title : req.body.title,
             body : req.body.body,
-            imageUrl : req.body.imageUrl,
+            image : req.body.image,
             user : req.user
         });
     res.status(200).json({
